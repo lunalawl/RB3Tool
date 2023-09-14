@@ -163,7 +163,7 @@ namespace RB3Tool
 			Microsoft.Win32.OpenFileDialog ofd = new Microsoft.Win32.OpenFileDialog();
             ofd.RestoreDirectory = true;
             ofd.Title = "Open Save";
-            ofd.Filter = "RB3 PS3 Save|SAVE.DAT";
+            ofd.Filter = "RB3 PS3 Save|SAVE*.DAT";
 			//if (ofd.ShowDialog() == DialogResult)
 			if ((bool)ofd.ShowDialog())
 			{
