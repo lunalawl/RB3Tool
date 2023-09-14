@@ -23,6 +23,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -32,6 +33,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -47,23 +49,9 @@
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
-    <Reference Include="Xceed.Wpf.AvalonDock">
-      <HintPath>..\packages\Extended.Wpf.Toolkit.2.4\lib\net40\Xceed.Wpf.AvalonDock.dll</HintPath>
-    </Reference>
-    <Reference Include="Xceed.Wpf.AvalonDock.Themes.Aero">
-      <HintPath>..\packages\Extended.Wpf.Toolkit.2.4\lib\net40\Xceed.Wpf.AvalonDock.Themes.Aero.dll</HintPath>
-    </Reference>
-    <Reference Include="Xceed.Wpf.AvalonDock.Themes.Metro">
-      <HintPath>..\packages\Extended.Wpf.Toolkit.2.4\lib\net40\Xceed.Wpf.AvalonDock.Themes.Metro.dll</HintPath>
-    </Reference>
-    <Reference Include="Xceed.Wpf.AvalonDock.Themes.VS2010">
-      <HintPath>..\packages\Extended.Wpf.Toolkit.2.4\lib\net40\Xceed.Wpf.AvalonDock.Themes.VS2010.dll</HintPath>
-    </Reference>
-    <Reference Include="Xceed.Wpf.DataGrid">
-      <HintPath>..\packages\Extended.Wpf.Toolkit.2.4\lib\net40\Xceed.Wpf.DataGrid.dll</HintPath>
-    </Reference>
-    <Reference Include="Xceed.Wpf.Toolkit">
-      <HintPath>..\packages\Extended.Wpf.Toolkit.2.4\lib\net40\Xceed.Wpf.Toolkit.dll</HintPath>
+    <Reference Include="Xceed.Wpf.Toolkit, Version=3.6.17611.0, Culture=neutral, PublicKeyToken=ba83ff368b7563c6, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Xceed.Wpf.Toolkit.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -71,6 +59,13 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="x360\Create.cs" />
+    <Compile Include="x360\Cryptography.cs" />
+    <Compile Include="x360\DJsIO.cs" />
+    <Compile Include="x360\Other.cs" />
+    <Compile Include="x360\STFSDescriptor.cs" />
+    <Compile Include="x360\STFSPackage.cs" />
+    <Compile Include="x360\STFSStuff.cs" />
     <Page Include="Character.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -106,163 +101,164 @@
     </EmbeddedResource>
     <None Include="packages.config" />
     <AppDesigner Include="Properties\" />
+    <None Include="Properties\XK0.bin" />
+    <None Include="Properties\XK1.bin" />
+    <None Include="Properties\XK4.bin" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Face Images\female_chin_0_keep.png" />
-    <Resource Include="Face Images\female_chin_1_keep.png" />
-    <Resource Include="Face Images\female_chin_2_keep.png" />
-    <Resource Include="Face Images\female_chin_3_keep.png" />
-    <Resource Include="Face Images\female_chin_4_keep.png" />
-    <Resource Include="Face Images\female_chin_5_keep.png" />
-    <Resource Include="Face Images\female_chin_6_keep.png" />
-    <Resource Include="Face Images\female_chin_7_keep.png" />
-    <Resource Include="Face Images\female_chin_8_keep.png" />
-    <Resource Include="Face Images\female_eye_0_keep.png" />
-    <Resource Include="Face Images\female_eye_10_keep.png" />
-    <Resource Include="Face Images\female_eye_11_keep.png" />
-    <Resource Include="Face Images\female_eye_12_keep.png" />
-    <Resource Include="Face Images\female_eye_13_keep.png" />
-    <Resource Include="Face Images\female_eye_14_keep.png" />
-    <Resource Include="Face Images\female_eye_15_keep.png" />
-    <Resource Include="Face Images\female_eye_16_keep.png" />
-    <Resource Include="Face Images\female_eye_17_keep.png" />
-    <Resource Include="Face Images\female_eye_1_keep.png" />
-    <Resource Include="Face Images\female_eye_2_keep.png" />
-    <Resource Include="Face Images\female_eye_3_keep.png" />
-    <Resource Include="Face Images\female_eye_4_keep.png" />
-    <Resource Include="Face Images\female_eye_5_keep.png" />
-    <Resource Include="Face Images\female_eye_6_keep.png" />
-    <Resource Include="Face Images\female_eye_7_keep.png" />
-    <Resource Include="Face Images\female_eye_8_keep.png" />
-    <Resource Include="Face Images\female_eye_9_keep.png" />
-    <Resource Include="Face Images\female_mouth_0_keep.png" />
-    <Resource Include="Face Images\female_mouth_10_keep.png" />
-    <Resource Include="Face Images\female_mouth_11_keep.png" />
-    <Resource Include="Face Images\female_mouth_1_keep.png" />
-    <Resource Include="Face Images\female_mouth_2_keep.png" />
-    <Resource Include="Face Images\female_mouth_3_keep.png" />
-    <Resource Include="Face Images\female_mouth_4_keep.png" />
-    <Resource Include="Face Images\female_mouth_5_keep.png" />
-    <Resource Include="Face Images\female_mouth_6_keep.png" />
-    <Resource Include="Face Images\female_mouth_7_keep.png" />
-    <Resource Include="Face Images\female_mouth_8_keep.png" />
-    <Resource Include="Face Images\female_mouth_9_keep.png" />
-    <Resource Include="Face Images\female_nose_0_keep.png" />
-    <Resource Include="Face Images\female_nose_10_keep.png" />
-    <Resource Include="Face Images\female_nose_11_keep.png" />
-    <Resource Include="Face Images\female_nose_12_keep.png" />
-    <Resource Include="Face Images\female_nose_13_keep.png" />
-    <Resource Include="Face Images\female_nose_14_keep.png" />
-    <Resource Include="Face Images\female_nose_15_keep.png" />
-    <Resource Include="Face Images\female_nose_16_keep.png" />
-    <Resource Include="Face Images\female_nose_17_keep.png" />
-    <Resource Include="Face Images\female_nose_1_keep.png" />
-    <Resource Include="Face Images\female_nose_2_keep.png" />
-    <Resource Include="Face Images\female_nose_3_keep.png" />
-    <Resource Include="Face Images\female_nose_4_keep.png" />
-    <Resource Include="Face Images\female_nose_5_keep.png" />
-    <Resource Include="Face Images\female_nose_6_keep.png" />
-    <Resource Include="Face Images\female_nose_7_keep.png" />
-    <Resource Include="Face Images\female_nose_8_keep.png" />
-    <Resource Include="Face Images\female_nose_9_keep.png" />
-    <Resource Include="Face Images\female_shape_0_keep.png" />
-    <Resource Include="Face Images\female_shape_10_keep.png" />
-    <Resource Include="Face Images\female_shape_11_keep.png" />
-    <Resource Include="Face Images\female_shape_12_keep.png" />
-    <Resource Include="Face Images\female_shape_13_keep.png" />
-    <Resource Include="Face Images\female_shape_14_keep.png" />
-    <Resource Include="Face Images\female_shape_15_keep.png" />
-    <Resource Include="Face Images\female_shape_16_keep.png" />
-    <Resource Include="Face Images\female_shape_17_keep.png" />
-    <Resource Include="Face Images\female_shape_1_keep.png" />
-    <Resource Include="Face Images\female_shape_2_keep.png" />
-    <Resource Include="Face Images\female_shape_3_keep.png" />
-    <Resource Include="Face Images\female_shape_4_keep.png" />
-    <Resource Include="Face Images\female_shape_5_keep.png" />
-    <Resource Include="Face Images\female_shape_6_keep.png" />
-    <Resource Include="Face Images\female_shape_7_keep.png" />
-    <Resource Include="Face Images\female_shape_8_keep.png" />
-    <Resource Include="Face Images\female_shape_9_keep.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Face Images\male_chin_0_keep.png" />
-    <Resource Include="Face Images\male_chin_1_keep.png" />
-    <Resource Include="Face Images\male_chin_2_keep.png" />
-    <Resource Include="Face Images\male_chin_3_keep.png" />
-    <Resource Include="Face Images\male_chin_4_keep.png" />
-    <Resource Include="Face Images\male_chin_5_keep.png" />
-    <Resource Include="Face Images\male_chin_6_keep.png" />
-    <Resource Include="Face Images\male_chin_7_keep.png" />
-    <Resource Include="Face Images\male_chin_8_keep.png" />
-    <Resource Include="Face Images\male_eye_0_keep.png" />
-    <Resource Include="Face Images\male_eye_10_keep.png" />
-    <Resource Include="Face Images\male_eye_11_keep.png" />
-    <Resource Include="Face Images\male_eye_12_keep.png" />
-    <Resource Include="Face Images\male_eye_13_keep.png" />
-    <Resource Include="Face Images\male_eye_14_keep.png" />
-    <Resource Include="Face Images\male_eye_15_keep.png" />
-    <Resource Include="Face Images\male_eye_16_keep.png" />
-    <Resource Include="Face Images\male_eye_17_keep.png" />
-    <Resource Include="Face Images\male_eye_1_keep.png" />
-    <Resource Include="Face Images\male_eye_2_keep.png" />
-    <Resource Include="Face Images\male_eye_3_keep.png" />
-    <Resource Include="Face Images\male_eye_4_keep.png" />
-    <Resource Include="Face Images\male_eye_5_keep.png" />
-    <Resource Include="Face Images\male_eye_6_keep.png" />
-    <Resource Include="Face Images\male_eye_7_keep.png" />
-    <Resource Include="Face Images\male_eye_8_keep.png" />
-    <Resource Include="Face Images\male_eye_9_keep.png" />
-    <Resource Include="Face Images\male_mouth_0_keep.png" />
-    <Resource Include="Face Images\male_mouth_10_keep.png" />
-    <Resource Include="Face Images\male_mouth_11_keep.png" />
-    <Resource Include="Face Images\male_mouth_1_keep.png" />
-    <Resource Include="Face Images\male_mouth_2_keep.png" />
-    <Resource Include="Face Images\male_mouth_3_keep.png" />
-    <Resource Include="Face Images\male_mouth_4_keep.png" />
-    <Resource Include="Face Images\male_mouth_5_keep.png" />
-    <Resource Include="Face Images\male_mouth_6_keep.png" />
-    <Resource Include="Face Images\male_mouth_7_keep.png" />
-    <Resource Include="Face Images\male_mouth_8_keep.png" />
-    <Resource Include="Face Images\male_mouth_9_keep.png" />
-    <Resource Include="Face Images\male_nose_0_keep.png" />
-    <Resource Include="Face Images\male_nose_10_keep.png" />
-    <Resource Include="Face Images\male_nose_11_keep.png" />
-    <Resource Include="Face Images\male_nose_12_keep.png" />
-    <Resource Include="Face Images\male_nose_13_keep.png" />
-    <Resource Include="Face Images\male_nose_14_keep.png" />
-    <Resource Include="Face Images\male_nose_15_keep.png" />
-    <Resource Include="Face Images\male_nose_16_keep.png" />
-    <Resource Include="Face Images\male_nose_17_keep.png" />
-    <Resource Include="Face Images\male_nose_1_keep.png" />
-    <Resource Include="Face Images\male_nose_2_keep.png" />
-    <Resource Include="Face Images\male_nose_3_keep.png" />
-    <Resource Include="Face Images\male_nose_4_keep.png" />
-    <Resource Include="Face Images\male_nose_5_keep.png" />
-    <Resource Include="Face Images\male_nose_6_keep.png" />
-    <Resource Include="Face Images\male_nose_7_keep.png" />
-    <Resource Include="Face Images\male_nose_8_keep.png" />
-    <Resource Include="Face Images\male_nose_9_keep.png" />
-    <Resource Include="Face Images\male_shape_0_keep.png" />
-    <Resource Include="Face Images\male_shape_10_keep.png" />
-    <Resource Include="Face Images\male_shape_11_keep.png" />
-    <Resource Include="Face Images\male_shape_12_keep.png" />
-    <Resource Include="Face Images\male_shape_13_keep.png" />
-    <Resource Include="Face Images\male_shape_14_keep.png" />
-    <Resource Include="Face Images\male_shape_15_keep.png" />
-    <Resource Include="Face Images\male_shape_16_keep.png" />
-    <Resource Include="Face Images\male_shape_17_keep.png" />
-    <Resource Include="Face Images\male_shape_1_keep.png" />
-    <Resource Include="Face Images\male_shape_2_keep.png" />
-    <Resource Include="Face Images\male_shape_3_keep.png" />
-    <Resource Include="Face Images\male_shape_4_keep.png" />
-    <Resource Include="Face Images\male_shape_5_keep.png" />
-    <Resource Include="Face Images\male_shape_6_keep.png" />
-    <Resource Include="Face Images\male_shape_7_keep.png" />
-    <Resource Include="Face Images\male_shape_8_keep.png" />
-    <Resource Include="Face Images\male_shape_9_keep.png" />
+    <Resource Include="face_images\female_chin_0_keep.png" />
+    <Resource Include="face_images\female_chin_1_keep.png" />
+    <Resource Include="face_images\female_chin_2_keep.png" />
+    <Resource Include="face_images\female_chin_3_keep.png" />
+    <Resource Include="face_images\female_chin_4_keep.png" />
+    <Resource Include="face_images\female_chin_5_keep.png" />
+    <Resource Include="face_images\female_chin_6_keep.png" />
+    <Resource Include="face_images\female_chin_7_keep.png" />
+    <Resource Include="face_images\female_chin_8_keep.png" />
+    <Resource Include="face_images\female_eye_0_keep.png" />
+    <Resource Include="face_images\female_eye_10_keep.png" />
+    <Resource Include="face_images\female_eye_11_keep.png" />
+    <Resource Include="face_images\female_eye_12_keep.png" />
+    <Resource Include="face_images\female_eye_13_keep.png" />
+    <Resource Include="face_images\female_eye_14_keep.png" />
+    <Resource Include="face_images\female_eye_15_keep.png" />
+    <Resource Include="face_images\female_eye_16_keep.png" />
+    <Resource Include="face_images\female_eye_17_keep.png" />
+    <Resource Include="face_images\female_eye_1_keep.png" />
+    <Resource Include="face_images\female_eye_2_keep.png" />
+    <Resource Include="face_images\female_eye_3_keep.png" />
+    <Resource Include="face_images\female_eye_4_keep.png" />
+    <Resource Include="face_images\female_eye_5_keep.png" />
+    <Resource Include="face_images\female_eye_6_keep.png" />
+    <Resource Include="face_images\female_eye_7_keep.png" />
+    <Resource Include="face_images\female_eye_8_keep.png" />
+    <Resource Include="face_images\female_eye_9_keep.png" />
+    <Resource Include="face_images\female_mouth_0_keep.png" />
+    <Resource Include="face_images\female_mouth_10_keep.png" />
+    <Resource Include="face_images\female_mouth_11_keep.png" />
+    <Resource Include="face_images\female_mouth_1_keep.png" />
+    <Resource Include="face_images\female_mouth_2_keep.png" />
+    <Resource Include="face_images\female_mouth_3_keep.png" />
+    <Resource Include="face_images\female_mouth_4_keep.png" />
+    <Resource Include="face_images\female_mouth_5_keep.png" />
+    <Resource Include="face_images\female_mouth_6_keep.png" />
+    <Resource Include="face_images\female_mouth_7_keep.png" />
+    <Resource Include="face_images\female_mouth_8_keep.png" />
+    <Resource Include="face_images\female_mouth_9_keep.png" />
+    <Resource Include="face_images\female_nose_0_keep.png" />
+    <Resource Include="face_images\female_nose_10_keep.png" />
+    <Resource Include="face_images\female_nose_11_keep.png" />
+    <Resource Include="face_images\female_nose_12_keep.png" />
+    <Resource Include="face_images\female_nose_13_keep.png" />
+    <Resource Include="face_images\female_nose_14_keep.png" />
+    <Resource Include="face_images\female_nose_15_keep.png" />
+    <Resource Include="face_images\female_nose_16_keep.png" />
+    <Resource Include="face_images\female_nose_17_keep.png" />
+    <Resource Include="face_images\female_nose_1_keep.png" />
+    <Resource Include="face_images\female_nose_2_keep.png" />
+    <Resource Include="face_images\female_nose_3_keep.png" />
+    <Resource Include="face_images\female_nose_4_keep.png" />
+    <Resource Include="face_images\female_nose_5_keep.png" />
+    <Resource Include="face_images\female_nose_6_keep.png" />
+    <Resource Include="face_images\female_nose_7_keep.png" />
+    <Resource Include="face_images\female_nose_8_keep.png" />
+    <Resource Include="face_images\female_nose_9_keep.png" />
+    <Resource Include="face_images\female_shape_0_keep.png" />
+    <Resource Include="face_images\female_shape_10_keep.png" />
+    <Resource Include="face_images\female_shape_11_keep.png" />
+    <Resource Include="face_images\female_shape_12_keep.png" />
+    <Resource Include="face_images\female_shape_13_keep.png" />
+    <Resource Include="face_images\female_shape_14_keep.png" />
+    <Resource Include="face_images\female_shape_15_keep.png" />
+    <Resource Include="face_images\female_shape_16_keep.png" />
+    <Resource Include="face_images\female_shape_17_keep.png" />
+    <Resource Include="face_images\female_shape_1_keep.png" />
+    <Resource Include="face_images\female_shape_2_keep.png" />
+    <Resource Include="face_images\female_shape_3_keep.png" />
+    <Resource Include="face_images\female_shape_4_keep.png" />
+    <Resource Include="face_images\female_shape_5_keep.png" />
+    <Resource Include="face_images\female_shape_6_keep.png" />
+    <Resource Include="face_images\female_shape_7_keep.png" />
+    <Resource Include="face_images\female_shape_8_keep.png" />
+    <Resource Include="face_images\female_shape_9_keep.png" />
+    <Resource Include="face_images\male_chin_0_keep.png" />
+    <Resource Include="face_images\male_chin_1_keep.png" />
+    <Resource Include="face_images\male_chin_2_keep.png" />
+    <Resource Include="face_images\male_chin_3_keep.png" />
+    <Resource Include="face_images\male_chin_4_keep.png" />
+    <Resource Include="face_images\male_chin_5_keep.png" />
+    <Resource Include="face_images\male_chin_6_keep.png" />
+    <Resource Include="face_images\male_chin_7_keep.png" />
+    <Resource Include="face_images\male_chin_8_keep.png" />
+    <Resource Include="face_images\male_eye_0_keep.png" />
+    <Resource Include="face_images\male_eye_10_keep.png" />
+    <Resource Include="face_images\male_eye_11_keep.png" />
+    <Resource Include="face_images\male_eye_12_keep.png" />
+    <Resource Include="face_images\male_eye_13_keep.png" />
+    <Resource Include="face_images\male_eye_14_keep.png" />
+    <Resource Include="face_images\male_eye_15_keep.png" />
+    <Resource Include="face_images\male_eye_16_keep.png" />
+    <Resource Include="face_images\male_eye_17_keep.png" />
+    <Resource Include="face_images\male_eye_1_keep.png" />
+    <Resource Include="face_images\male_eye_2_keep.png" />
+    <Resource Include="face_images\male_eye_3_keep.png" />
+    <Resource Include="face_images\male_eye_4_keep.png" />
+    <Resource Include="face_images\male_eye_5_keep.png" />
+    <Resource Include="face_images\male_eye_6_keep.png" />
+    <Resource Include="face_images\male_eye_7_keep.png" />
+    <Resource Include="face_images\male_eye_8_keep.png" />
+    <Resource Include="face_images\male_eye_9_keep.png" />
+    <Resource Include="face_images\male_mouth_0_keep.png" />
+    <Resource Include="face_images\male_mouth_10_keep.png" />
+    <Resource Include="face_images\male_mouth_11_keep.png" />
+    <Resource Include="face_images\male_mouth_1_keep.png" />
+    <Resource Include="face_images\male_mouth_2_keep.png" />
+    <Resource Include="face_images\male_mouth_3_keep.png" />
+    <Resource Include="face_images\male_mouth_4_keep.png" />
+    <Resource Include="face_images\male_mouth_5_keep.png" />
+    <Resource Include="face_images\male_mouth_6_keep.png" />
+    <Resource Include="face_images\male_mouth_7_keep.png" />
+    <Resource Include="face_images\male_mouth_8_keep.png" />
+    <Resource Include="face_images\male_mouth_9_keep.png" />
+    <Resource Include="face_images\male_nose_0_keep.png" />
+    <Resource Include="face_images\male_nose_10_keep.png" />
+    <Resource Include="face_images\male_nose_11_keep.png" />
+    <Resource Include="face_images\male_nose_12_keep.png" />
+    <Resource Include="face_images\male_nose_13_keep.png" />
+    <Resource Include="face_images\male_nose_14_keep.png" />
+    <Resource Include="face_images\male_nose_15_keep.png" />
+    <Resource Include="face_images\male_nose_16_keep.png" />
+    <Resource Include="face_images\male_nose_17_keep.png" />
+    <Resource Include="face_images\male_nose_1_keep.png" />
+    <Resource Include="face_images\male_nose_2_keep.png" />
+    <Resource Include="face_images\male_nose_3_keep.png" />
+    <Resource Include="face_images\male_nose_4_keep.png" />
+    <Resource Include="face_images\male_nose_5_keep.png" />
+    <Resource Include="face_images\male_nose_6_keep.png" />
+    <Resource Include="face_images\male_nose_7_keep.png" />
+    <Resource Include="face_images\male_nose_8_keep.png" />
+    <Resource Include="face_images\male_nose_9_keep.png" />
+    <Resource Include="face_images\male_shape_0_keep.png" />
+    <Resource Include="face_images\male_shape_10_keep.png" />
+    <Resource Include="face_images\male_shape_11_keep.png" />
+    <Resource Include="face_images\male_shape_12_keep.png" />
+    <Resource Include="face_images\male_shape_13_keep.png" />
+    <Resource Include="face_images\male_shape_14_keep.png" />
+    <Resource Include="face_images\male_shape_15_keep.png" />
+    <Resource Include="face_images\male_shape_16_keep.png" />
+    <Resource Include="face_images\male_shape_17_keep.png" />
+    <Resource Include="face_images\male_shape_1_keep.png" />
+    <Resource Include="face_images\male_shape_2_keep.png" />
+    <Resource Include="face_images\male_shape_3_keep.png" />
+    <Resource Include="face_images\male_shape_4_keep.png" />
+    <Resource Include="face_images\male_shape_5_keep.png" />
+    <Resource Include="face_images\male_shape_6_keep.png" />
+    <Resource Include="face_images\male_shape_7_keep.png" />
+    <Resource Include="face_images\male_shape_8_keep.png" />
+    <Resource Include="face_images\male_shape_9_keep.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

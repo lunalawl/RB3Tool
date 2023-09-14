@@ -1,25 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using System.IO;
 
 namespace RB3Tool
 {
-	/// <summary>
-	/// Interaction logic for Character.xaml
-	/// </summary>
-	public partial class Character
+    /// <summary>
+    /// Interaction logic for Character.xaml
+    /// </summary>
+    public partial class Character
 	{
 		string genderString;
 
@@ -84,15 +76,18 @@ namespace RB3Tool
 			charBasesA = charBaseA;
 			charBasesB = charBaseB;
 
-			// check initial gender to load face images
+			// check initial gender to load face_images
 			fs.Position = currentChar + Char_Gender;
 			if (br.ReadInt32() == 2)
+			{
 				genderString = "female";
+			}
 			else
+			{
 				genderString = "male";
-
+			}
+						
 			InitializeComponent();
-
 			ReadCharacter(br, fs);
 		}
 
@@ -100,7 +95,7 @@ namespace RB3Tool
 		{
 			if (!File.Exists(saveFile))
 			{
-				MessageBox.Show("The loaded save file could not be found. Check the file and try again.");
+				MessageBox.Show("The loaded save file could not be found. Check the file and try again.", "Character Editor", MessageBoxButton.OK, MessageBoxImage.Exclamation);
 				return;
 			}
 
@@ -281,7 +276,7 @@ namespace RB3Tool
 			charHair.SelectedIndex = 0;
 			charWrist.SelectedIndex = 0;
 
-			// update face images
+			// update face_images
 			charCheekImg.Source = new BitmapImage(setFaceImageUri(charCheek.Value.Value - 1, "_shape_"));
 			charChinImg.Source = new BitmapImage(setFaceImageUri(charChin.Value.Value - 1, "_chin_"));
 			charNoseImg.Source = new BitmapImage(setFaceImageUri(charNose.Value.Value - 1, "_nose_"));
@@ -296,8 +291,8 @@ namespace RB3Tool
 
 			if (!File.Exists(saveFile))
 			{
-				MessageBox.Show("The loaded save file could not be found. Check the file and try again.");
-				return;
+				MessageBox.Show("The loaded save file could not be found\nCheck the file and try again", "Character Editor", MessageBoxButton.OK, MessageBoxImage.Exclamation);
+                return;
 			}
 
 			FileStream fs = new FileStream(saveFile, FileMode.Open, FileAccess.Write);
@@ -308,7 +303,7 @@ namespace RB3Tool
 
 			fs.Close();
 			bw.Close();
-			MessageBox.Show("Character saved successfully! Don't forget to rehash/resign.");
+			MessageBox.Show("Character saved successfully!", "Character Editor", MessageBoxButton.OK, MessageBoxImage.Information);
 		}
 
 		private void WriteCharacter(int baseOffset, FileStream fs, BinaryWriter bw)
@@ -2634,7 +2629,7 @@ namespace RB3Tool
 
 		private Uri setFaceImageUri(int value, string shape)
 		{
-			string newURI = "Face Images\\" + genderString + shape + value.ToString() + "_keep.png";
+			string newURI = "face_images\\" + genderString + shape + value.ToString() + "_keep.png";
 			return (new Uri(newURI, UriKind.Relative));
 		}
 	}

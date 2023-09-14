@@ -12,8 +12,8 @@
 					<StackPanel Orientation="Horizontal" Margin="0,4,0,0">
 						<TextBlock Text="Name" VerticalAlignment="Center" />
 						<TextBox x:Name="charName" Margin="4,0,0,0" VerticalAlignment="Center" Width="328" MaxLength="28" AcceptsReturn="False" AcceptsTab="False"/>
-						<Button x:Name="charReload" Content="Reload" Width="64" VerticalAlignment="Center" Margin="4,0,0,0" Click="charReload_Click"/>
-						<Button x:Name="charSave" Content="Save" Width="64" VerticalAlignment="Center" Margin="4,0,0,0" Click="charSave_Click"/>
+						<Button x:Name="charReload" Content="Reload" Width="64" VerticalAlignment="Center" Margin="4,0,0,0" Cursor="Hand" Click="charReload_Click"/>
+						<Button x:Name="charSave" Content="Save" Width="64" VerticalAlignment="Center" Margin="4,0,0,0" Cursor="Hand" Click="charSave_Click"/>
 					</StackPanel>
 					<StackPanel Orientation="Horizontal" Margin="0,4,0,0">
 						<TextBlock Text="Height" VerticalAlignment="Center"/>
@@ -60,7 +60,7 @@
 			<GroupBox Header="Face" Margin="0,4,0,0">
 				<StackPanel Margin="0,4,0,0" Orientation="Horizontal">
 					<StackPanel>
-						<Image x:Name="charCheekImg" Source="Face Images\male_shape_0_keep.png" Width="80" />
+						<Image x:Name="charCheekImg" Source="face_images\male_shape_0_keep.png" Width="80" />
 						<TextBlock Text="Cheeks" HorizontalAlignment="Center" />
 						<xctk:IntegerUpDown x:Name="charCheek" Value="1" Minimum="1" Maximum="18" ValueChanged="FaceShape_ValueChanged"/>
 						<Expander Header="Tuning" ExpandDirection="Down">
@@ -73,7 +73,7 @@
 						</Expander>
 					</StackPanel>
 					<StackPanel Margin="4,0,0,0">
-						<Image x:Name="charChinImg" Source="Face Images\male_chin_0_keep.png" Width="80" />
+						<Image x:Name="charChinImg" Source="face_images\male_chin_0_keep.png" Width="80" />
 						<TextBlock Text="Chin" HorizontalAlignment="Center" />
 						<xctk:IntegerUpDown x:Name="charChin" Value="1" Minimum="1" Maximum="9" ValueChanged="FaceShape_ValueChanged"/>
 						<Expander Header="Tuning" ExpandDirection="Down">
@@ -86,7 +86,7 @@
 						</Expander>
 					</StackPanel>
 					<StackPanel Margin="4,0,0,0">
-						<Image x:Name="charNoseImg" Source="Face Images\male_nose_0_keep.png" Width="80" />
+						<Image x:Name="charNoseImg" Source="face_images\male_nose_0_keep.png" Width="80" />
 						<TextBlock Text="Nose" HorizontalAlignment="Center" />
 						<xctk:IntegerUpDown x:Name="charNose" Value="1" Minimum="1" Maximum="18" ValueChanged="FaceShape_ValueChanged"/>
 						<Expander Header="Tuning" ExpandDirection="Down">
@@ -99,7 +99,7 @@
 						</Expander>
 					</StackPanel>
 					<StackPanel Margin="4,0,0,0">
-						<Image x:Name="charEyeImg" Source="Face Images\male_eye_0_keep.png" Width="80" />
+						<Image x:Name="charEyeImg" Source="face_images\male_eye_0_keep.png" Width="80" />
 						<TextBlock Text="Eyes" HorizontalAlignment="Center" />
 						<xctk:IntegerUpDown x:Name="charEye" Value="1" Minimum="1" Maximum="18" ValueChanged="FaceShape_ValueChanged"/>
 						<Expander Header="Tuning" ExpandDirection="Down">
@@ -114,7 +114,7 @@
 						</Expander>
 					</StackPanel>
 					<StackPanel Margin="4,0,0,0">
-						<Image x:Name="charMouthImg" Source="Face Images\male_mouth_0_keep.png" Width="80" />
+						<Image x:Name="charMouthImg" Source="face_images\male_mouth_0_keep.png" Width="80" />
 						<TextBlock Text="Mouth" HorizontalAlignment="Center" />
 						<xctk:IntegerUpDown x:Name="charMouth" Value="1" Minimum="1" Maximum="12" ValueChanged="FaceShape_ValueChanged"/>
 						<Expander Header="Tuning" ExpandDirection="Down">
