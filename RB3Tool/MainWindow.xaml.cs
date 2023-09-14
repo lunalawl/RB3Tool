@@ -177,15 +177,24 @@ namespace RB3Tool
             BinaryReader br = new BinaryReader(fs);
             fs.Position = 0;
 
-            //Make sure this is a con file
+            //Check if the save file is encrypted
             var fileMagic = br.ReadInt32();
-        //    if (fileMagic != 542003011)
-        //    {
-        //        fs.Close();
-        //        br.Close();
-        //        System.Windows.MessageBox.Show("This file is not a CON container", "Character Editor", MessageBoxButton.OK, MessageBoxImage.Exclamation); ;
-        //        return;
-        //    }
+            if (fileMagic != 152)
+            {
+                fs.Close();
+                br.Close();
+                System.Windows.MessageBox.Show("This save file is encrypted.", "Character Editor", MessageBoxButton.OK, MessageBoxImage.Exclamation); ;
+                return;
+            }
+            //Make sure this is a con file
+		//	var fileMagic = br.ReadInt32();
+		//	if (fileMagic != 542003011)
+		//	{
+		//		fs.Close();
+		//		br.Close();
+		//		MessageBox.Show("This file is not a CON container.");
+		//		return;
+		//	}
             charTabs.Items.Clear();
             txtFile.Text = save;
             for (int i = 0; i < 10; i++)
